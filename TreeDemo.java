@@ -57,14 +57,14 @@ class BinarySearchTree{
 
       
          if (current.right != null) {
-         //check if the current node's right child has a value
+         //check if current node's right child has a value
             stack.push(current.right);
             //if it does, push it onto the stack to be processed next
          }
 
          
          if (current.left != null) {
-         //check if the current node's left child has a value
+         //check if current node's left child has a value
             stack.push(current.left);
             //if it does, push it onto the stack to be processed next
          }
