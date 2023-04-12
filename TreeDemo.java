@@ -1,3 +1,5 @@
+import java.util.Stack;
+
 class Node{
    int value;
    Node left, right;
@@ -41,7 +43,32 @@ class BinarySearchTree{
    */
    public void preOrderTraversal(Node root){
       
+      if (root == null) {
+         return; // return null if root is null
+      }
+
+      Stack<Node> stack = new Stack<>(); //Create a stack to store the nodes
+      stack.push(root); //push the root node onto the stack
+
+      while (!stack.isEmpty()) {
+      //While the stack is not empty
+         Node current = stack.pop(); //take the current node from the top of the stack
+         System.out.print(current.value + " "); //Print out this value
+
       
+         if (current.right != null) {
+         //check if the current node's right child has a value
+            stack.push(current.right);
+            //if it does, push it onto the stack to be processed next
+         }
+
+         
+         if (current.left != null) {
+         //check if the current node's left child has a value
+            stack.push(current.left);
+            //if it does, push it onto the stack to be processed next
+         }
+      }//end of while loop
       
    }
 
