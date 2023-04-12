@@ -132,9 +132,27 @@ class BinarySearchTree{
    with a specific value
    */
    public boolean find(Node root, int key){
-	  //implement me
-      return false;           
-   }
+	  
+      if (root == null) {
+         return false; //return false if root is null
+      }
+
+      while (root != null) {
+      //while the root is not null
+         if (root.value == key) {
+         //check if the root value is equal to that of the key
+            return true; //Return true, the node has been found!
+         }else if (key < root.value) {
+         //if the keyt is less than the root value
+            root = root.left; //check the left subtree for the value
+         }else {
+         //if the key is greater than the current root
+            root = root.right; //check the right subtree for the value
+         }
+      }
+      return false; // Return false if key is not found
+                
+   }//end of find method
    
 
    /*
