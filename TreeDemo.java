@@ -160,8 +160,15 @@ class BinarySearchTree{
    with a smallest key
    */
    public int getMin(Node root){
-      //implement me
-   }
+      
+      if (root.left == null) {
+      //check if the root's left node is null
+         return root.value; //base case, return the root
+      }
+
+      return getMin(root.left); //Otherwise recursively traverse the left side of the tree until you get to the smallest value
+      
+   }//end of get min method
   
 
    /*
@@ -169,8 +176,8 @@ class BinarySearchTree{
    with a largest key
    */
    public int getMax(Node root){
-	  //implement me
-   }
+	  
+   }//end of getMax method
    
 
    /*
