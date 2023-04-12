@@ -110,9 +110,21 @@ class BinarySearchTree{
    post-order traversal
    */
    public void postOrderTraversal(Node root){
-      //implement me
-   }
    
+      if (root == null) {
+         return; //Base. Return nothing when the root is null
+      }
+
+      postOrderTraversal(root.left);
+      //call the function recursively on the left subtree
+
+      postOrderTraversal(root.right);
+      //call the function recursively on the right subtree
+
+      System.out.print(root.value + " ");
+      //print the current node's value
+      
+   }//end of postOrderTraversal
    
    
    /*
