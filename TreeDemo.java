@@ -78,8 +78,31 @@ class BinarySearchTree{
    in-order traversal
    */
    public void inOrderTraversal(Node root){
-      //implement me
-   }
+      if (root == null) {
+      return; //empty return if root Node is null
+      }//end of if
+
+      Stack<Node> stack = new Stack<>(); // Create a stack to store the nodes
+      Node current = root; //start with the passed in node
+
+      while (current != null || !stack.isEmpty()) {
+      //while the current node is not null or the stack is not empty
+         while (current != null) {
+         //enter a second while loop that deals with the current node not being null
+            stack.push(current);
+            //push the current node onto the stack
+            current = current.left;
+            //set current equal to its left node
+         }
+
+         current = stack.pop();
+         //pop the current node off the stack
+         System.out.print(current.value + " ");
+         //print this node's value out
+         current = current.right;
+         //set current equal to its right node
+      }//end main while loop
+   }//end of inOrderTraversal
    
    
    
